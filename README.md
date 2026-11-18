@@ -51,14 +51,14 @@ On a list entry in the project menu:
 
 | Key | Aliases | Opens | Details |
 |---|---|---|---|
-| `m` | `mr`, `mrs` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
-| `i` | `issue`, `issues` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. |
-| `t` | `file`, `files`, `find` | Find file | Lists the files on the default branch in Alfred. Search by path. |
-| `p` | `pipe`, `pipelines`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
-| `c` | `commit`, `commits` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |
-| `branch` | `branches` | Branches | Lists all branches in Alfred, newest commit first. Search by name. |
-| `tag` | `tags` | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
-| `r` | `release`, `releases` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
+| `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
+| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. |
+| `t` | `file`, `find` | Find file | Lists the files on the default branch in Alfred. Search by path. |
+| `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
+| `c` | `commit` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |
+| `branch` | | Branches | Lists all branches in Alfred, newest commit first. Search by name. |
+| `tag` | | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
+| `r` | `release` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
 | `b` | | Issue boards | Opens the project's issue boards in the browser. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
