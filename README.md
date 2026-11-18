@@ -36,7 +36,7 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases):
 
 - <kbd>↩</kbd> Open the entry in the browser.
 - <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name).
@@ -49,18 +49,25 @@ On a list entry in the project menu:
 
 ### Shortcuts
 
-| Key | Opens | Key | Opens |
+| Key | Aliases | Opens | Details |
 |---|---|---|---|
-| `t` | file search (list) | `f` | repository |
-| `m` | merge requests (list) | `j` | jobs |
-| `i` | issues (list) | `r` | releases |
-| `p` | pipelines (list) | `w` | wiki |
-| `c` | commits (list) | `e` | environments |
-| `branch` | branches (list) | `b` | issue boards |
-| `tag` | tags (list) | `.` | Web IDE |
-| | | `settings` | settings |
+| `m` | `mr`, `mrs` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
+| `i` | `issue`, `issues` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. |
+| `t` | `file`, `files`, `find` | Find file | Lists the files on the default branch in Alfred. Search by path. |
+| `p` | `pipe`, `pipelines`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
+| `c` | `commit`, `commits` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |
+| `branch` | `branches` | Branches | Lists all branches in Alfred, newest commit first. Search by name. |
+| `tag` | `tags` | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
+| `r` | `release`, `releases` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
+| `b` | | Issue boards | Opens the project's issue boards in the browser. |
+| `f` | | Repository | Opens the repository files on the default branch in the browser. |
+| `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
+| `w` | | Wiki | Opens the wiki's home page in the browser. |
+| `e` | | Environments | Opens the project's environments in the browser. |
+| `.` | | Web IDE | Opens the default branch in GitLab's Web IDE. |
+| `settings` | | Settings | Opens the project settings in the browser. |
 
-`mr`, `issue`, `file`, `pipe` and `commit` work for the lists too. You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
+You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
 
 ## Installation
 
@@ -73,7 +80,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects, files | 1 hour |
-| branches, tags | 10 minutes |
+| branches, tags, releases | 10 minutes |
 | merge requests, issues, pipelines, commits | 1 minute |
 
 ## Development

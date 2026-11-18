@@ -61,3 +61,15 @@ test("commits are searchable by short SHA, title and author", () => {
   expect(entry.subtitle).toBe("a1b2c3d · Anna");
   expect(entry.haystack).toBe("a1b2c3d Fix cart total Anna");
 });
+
+test("releases fall back to the tag name and copy the tag", () => {
+  const [named, unnamed] = findView("r").toEntries([
+    { name: "Spring release", tag_name: "v1.1.0", description: "Adds search", author: { username: "anna" }, _links: { self: "u1" }, released_at: "2026-03-01T00:00:00Z" },
+    { name: "", tag_name: "v1.0.0", description: null, author: { username: "anna" }, _links: { self: "u2" }, released_at: "2026-01-01T00:00:00Z" },
+  ]);
+  expect(named.subtitle).toBe("v1.1.0 · anna");
+  expect(named.copy).toBe("v1.1.0");
+  expect(unnamed.title).toBe("v1.0.0");
+  expect(unnamed.url).toBe("u2");
+  expect(unnamed.subtitle).toBe("anna");
+});
