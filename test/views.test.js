@@ -102,3 +102,9 @@ test("environments link to their page and copy the deployed URL", () => {
   expect(prod.copy).toBe("https://shop.example.com");
   expect(review.copy).toBe("review/cart");
 });
+
+test("wiki pages encode their slug in the URL", () => {
+  const [faq] = findView("w").toEntries([{ title: "FAQ & Tipps für Einsteiger", slug: "FAQ-&-Tipps-für-Einsteiger" }], project);
+  expect(faq.url).toBe("https://gitlab.example.com/team/app/-/wikis/FAQ-%26-Tipps-f%C3%BCr-Einsteiger");
+  expect(faq.copy).toBe("FAQ-&-Tipps-für-Einsteiger");
+});

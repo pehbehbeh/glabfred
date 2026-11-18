@@ -219,13 +219,13 @@ Search your projects on all GitLab hosts via the `glab` keyword.
 * &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the project in the browser.
 * &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy the project path.
 
-The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`. Type `m` for merge requests, `i` for issues, `t` to find a file, `p` for pipelines, `c` for commits, `branch` for branches, `tag` for tags, `r` for releases, `milestone` for milestones and `e` for environments. These open a searchable list.
+The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`. Type `m` for merge requests, `i` for issues, `t` to find a file, `p` for pipelines, `c` for commits, `branch` for branches, `tag` for tags, `r` for releases, `milestone` for milestones, `e` for environments and `w` for wiki pages. These open a searchable list.
 
 * &lt;kbd&gt;↩&lt;/kbd&gt; Open the entry in the browser.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, or the environment's URL).
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL or the wiki page's path).
 * &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;C&lt;/kbd&gt; Copy its URL.
 
-The other shortcuts open a page directly: `b` boards, `f` repository, `j` jobs, `w` wiki, `.` Web IDE and `settings`. On a list entry in the project menu:
+The other shortcuts open a page directly: `b` boards, `f` repository, `j` jobs, `.` Web IDE and `settings`. On a list entry in the project menu:
 
 * &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the whole list in GitLab.
 * &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; On Merge requests or Issues, create a new one.
@@ -552,7 +552,7 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Shortcut in the project menu.</string>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
 			<key>label</key>
 			<string>Wiki</string>
 			<key>type</key>
