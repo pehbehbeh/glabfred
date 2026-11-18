@@ -36,10 +36,10 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, branches, tags):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the branch or the tag name).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -52,15 +52,15 @@ On a list entry in the project menu:
 | Key | Opens | Key | Opens |
 |---|---|---|---|
 | `t` | file search (list) | `f` | repository |
-| `m` | merge requests (list) | `c` | commits |
-| `i` | issues (list) | `j` | jobs |
-| `p` | pipelines (list) | `r` | releases |
-| `branch` | branches (list) | `w` | wiki |
-| `tag` | tags (list) | `e` | environments |
-| `b` | issue boards | `.` | Web IDE |
-| `settings` | settings | | |
+| `m` | merge requests (list) | `j` | jobs |
+| `i` | issues (list) | `r` | releases |
+| `p` | pipelines (list) | `w` | wiki |
+| `c` | commits (list) | `e` | environments |
+| `branch` | branches (list) | `b` | issue boards |
+| `tag` | tags (list) | `.` | Web IDE |
+| | | `settings` | settings |
 
-`mr`, `issue`, `file` and `pipe` work for the lists too. You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
+`mr`, `issue`, `file`, `pipe` and `commit` work for the lists too. You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
 
 ## Installation
 
@@ -74,7 +74,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 |---|---|
 | projects, files | 1 hour |
 | branches, tags | 10 minutes |
-| merge requests, issues, pipelines | 1 minute |
+| merge requests, issues, pipelines, commits | 1 minute |
 
 ## Development
 

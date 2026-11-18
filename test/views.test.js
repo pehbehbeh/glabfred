@@ -52,3 +52,12 @@ test("tags link to their page and carry the name to copy", () => {
   expect(newest.url).toBe("https://gitlab.example.com/team/app/-/tags/release/v1.1");
   expect(older.copy).toBe("v1.0.0");
 });
+
+test("commits are searchable by short SHA, title and author", () => {
+  const [entry] = findView("c").toEntries([
+    { short_id: "a1b2c3d", title: "Fix cart total", author_name: "Anna", web_url: "u", committed_date: "2026-01-01T00:00:00Z" },
+  ]);
+  expect(entry.copy).toBe("a1b2c3d");
+  expect(entry.subtitle).toBe("a1b2c3d · Anna");
+  expect(entry.haystack).toBe("a1b2c3d Fix cart total Anna");
+});
