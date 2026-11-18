@@ -85,3 +85,20 @@ test("milestones sort by due date and copy GitLab's reference", () => {
   expect(entries[1].copy).toBe("%Backlog");
   expect(entries[1].subtitle).toBe("group");
 });
+
+test("environments link to their page and copy the deployed URL", () => {
+  const [prod, review] = findView("e").toEntries(
+    [
+      { id: 3, name: "production", tier: "production", external_url: "https://shop.example.com", updated_at: "2026-03-01T00:00:00Z" },
+      { id: 4, name: "review/cart", tier: "development", external_url: null, updated_at: "2026-01-01T00:00:00Z" },
+    ],
+    project,
+  );
+  expect(prod.url).toBe("https://shop.example.com");
+  expect(prod.cmdUrl).toBe("https://gitlab.example.com/team/app/-/environments/3");
+  expect(review.url).toBe("https://gitlab.example.com/team/app/-/environments/4");
+  expect(review.cmdUrl).toBe(undefined);
+  expect(prod.subtitle).toBe("production · https://shop.example.com");
+  expect(prod.copy).toBe("https://shop.example.com");
+  expect(review.copy).toBe("review/cart");
+});

@@ -36,10 +36,10 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, or the milestone as `%name`).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, or the environment's URL).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -60,11 +60,11 @@ On a list entry in the project menu:
 | `tag` | | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
 | `r` | `release` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
 | `milestone` | | Milestones | Lists active milestones of the project and its parent groups in Alfred, next due date first. Search by title or description. |
+| `e` | `env` | Environments | Lists available environments in Alfred, last updated first. Search by name, tier or URL. ↩ opens the deployed app, ⌘↩ the environment in GitLab. |
 | `b` | | Issue boards | Opens the project's issue boards in the browser. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
 | `w` | | Wiki | Opens the wiki's home page in the browser. |
-| `e` | | Environments | Opens the project's environments in the browser. |
 | `.` | | Web IDE | Opens the default branch in GitLab's Web IDE. |
 | `settings` | | Settings | Opens the project settings in the browser. |
 
@@ -81,7 +81,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects, files | 1 hour |
-| branches, tags, releases, milestones | 10 minutes |
+| branches, tags, releases, milestones, environments | 10 minutes |
 | merge requests, issues, pipelines, commits | 1 minute |
 
 ## Development
