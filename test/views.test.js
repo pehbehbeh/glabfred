@@ -76,11 +76,12 @@ test("releases fall back to the tag name and copy the tag", () => {
 
 test("milestones sort by due date and copy GitLab's reference", () => {
   const entries = findView("milestone").toEntries([
-    { title: "Backlog", due_date: null, expired: false, web_url: "u1" },
+    { title: "Backlog", due_date: null, expired: false, group_id: 9, web_url: "u1" },
     { title: "Spring release", due_date: "2026-03-01", expired: true, web_url: "u2" },
   ]);
   expect(entries.map((e) => e.title)).toEqual(["Spring release", "Backlog"]);
   expect(entries[0].subtitle).toBe("due 2026-03-01 · overdue");
   expect(entries[0].copy).toBe('%"Spring release"');
   expect(entries[1].copy).toBe("%Backlog");
+  expect(entries[1].subtitle).toBe("group");
 });

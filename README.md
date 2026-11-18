@@ -59,7 +59,7 @@ On a list entry in the project menu:
 | `branch` | | Branches | Lists all branches in Alfred, newest commit first. Search by name. |
 | `tag` | | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
 | `r` | `release` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
-| `milestone` | | Milestones | Lists active milestones in Alfred, next due date first. Search by title or description. |
+| `milestone` | | Milestones | Lists active milestones of the project and its parent groups in Alfred, next due date first. Search by title or description. |
 | `b` | | Issue boards | Opens the project's issue boards in the browser. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
