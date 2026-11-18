@@ -36,10 +36,10 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, branches):
+In a list (merge requests, issues, files, pipelines, branches, tags):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path or the branch name).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the branch or the tag name).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -56,8 +56,9 @@ On a list entry in the project menu:
 | `i` | issues (list) | `j` | jobs |
 | `p` | pipelines (list) | `r` | releases |
 | `branch` | branches (list) | `w` | wiki |
-| `b` | issue boards | `e` | environments |
-| `.` | Web IDE | `settings` | settings |
+| `tag` | tags (list) | `e` | environments |
+| `b` | issue boards | `.` | Web IDE |
+| `settings` | settings | | |
 
 `mr`, `issue`, `file` and `pipe` work for the lists too. You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
 
@@ -72,7 +73,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects, files | 1 hour |
-| branches | 10 minutes |
+| branches, tags | 10 minutes |
 | merge requests, issues, pipelines | 1 minute |
 
 ## Development

@@ -38,3 +38,17 @@ test("a configured list key with a space or a clash falls back to the default", 
   // Moving issues away frees i for merge requests
   expect(keys({ mrs: "i", issues: "x" })).toEqual(["i", "x", "t"]);
 });
+
+test("tags link to their page and carry the name to copy", () => {
+  const [newest, older] = findView("tag").toEntries(
+    [
+      { name: "v1.0.0", message: "", release: null, commit: { title: "Initial release", committed_date: "2026-01-01T00:00:00Z" } },
+      { name: "release/v1.1", message: "Spring", release: { tag_name: "release/v1.1" }, commit: { title: "Add search", committed_date: "2026-03-01T00:00:00Z" } },
+    ],
+    project,
+  );
+  expect(newest.title).toBe("release/v1.1");
+  expect(newest.subtitle).toBe("release · Add search");
+  expect(newest.url).toBe("https://gitlab.example.com/team/app/-/tags/release/v1.1");
+  expect(older.copy).toBe("v1.0.0");
+});
