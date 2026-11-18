@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.pbb.glabfred</string>
+	<key>connections</key>
+	<dict>
+		<key>41CC3AC7-1AD5-4373-B4A0-BE20ADB3932C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>C21FF875-03B9-4A25-B120-9C7E3C555298</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A1C6E2F-4B3D-4E5A-8F7B-2C1D3E4F5A6B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CC12EF8B-97E2-4DA6-989E-6E766336576D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41CC3AC7-1AD5-4373-B4A0-BE20ADB3932C</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Phil-Bastian Berndt</string>
+	<key>description</key>
+	<string>Alfred workflow to search your GitLab projects and jump to their merge requests, issues and more, on every host you're logged in to with the GitLab CLI (glab).</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>glabfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading GitLab projects…</string>
+				<key>script</key>
+				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.bun/bin:$HOME/.local/share/mise/shims:$HOME/.volta/bin:$PATH"
+if command -v bun &gt;/dev/null; then exec bun main.js "$1"
+elif command -v node &gt;/dev/null; then exec node main.js "$1"
+else echo "{\"items\":[{\"title\":\"No JavaScript runtime found\",\"subtitle\":\"Install bun or node\",\"valid\":false}]}"; fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search GitLab projects</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CC12EF8B-97E2-4DA6-989E-6E766336576D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>open</string>
+						<key>outputlabel</key>
+						<string>Open</string>
+						<key>uid</key>
+						<string>C21FF875-03B9-4A25-B120-9C7E3C555298</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Copy</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>41CC3AC7-1AD5-4373-B4A0-BE20ADB3932C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9A1C6E2F-4B3D-4E5A-8F7B-2C1D3E4F5A6B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Setup
+
+Log in to each GitLab host with [glab](https://gitlab.com/gitlab-org/cli):
+
+```
+glab auth login
+```
+
+The workflow searches every host that `glab auth status` reports as logged in. It runs on [Bun](https://bun.sh) or [Node.js](https://nodejs.org) 22+, and takes Bun if both are there.
+
+## Usage
+
+Search your projects on all GitLab hosts via the `glab` keyword.
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Open the project menu.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the project in the browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy the project path.
+
+The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`. Type `m` for merge requests, `i` for issues, `t` to find a file, `p` for pipelines and `branch` for branches. These open a searchable list.
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Open the entry in the browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy its reference (`!12`, `#34`, the file path or the branch name).
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;C&lt;/kbd&gt; Copy its URL.
+
+The other shortcuts open a page directly: `b` boards, `f` repository, `c` commits, `j` jobs, `r` releases, `w` wiki, `e` environments, `.` Web IDE and `settings`. On a list entry in the project menu:
+
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the whole list in GitLab.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; On Merge requests or Issues, create a new one.
+
+Results are cached and refresh in the background, so typing never waits for GitLab.
+
+You can change the keyword and every shortcut in the Workflow's Configuration.</string>
+	<key>uidata</key>
+	<dict>
+		<key>41CC3AC7-1AD5-4373-B4A0-BE20ADB3932C</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>478E5903-DF13-4546-8719-5E29A53D6016</key>
+		<dict>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>9A1C6E2F-4B3D-4E5A-8F7B-2C1D3E4F5A6B</key>
+		<dict>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>CC12EF8B-97E2-4DA6-989E-6E766336576D</key>
+		<dict>
+			<key>xpos</key>
+			<real>70</real>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>glab</string>
+				<key>placeholder</key>
+				<string>glab</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword that starts the search.</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>m</string>
+				<key>placeholder</key>
+				<string>m</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Merge requests</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_merge_requests</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>i</string>
+				<key>placeholder</key>
+				<string>i</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Issues</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_issues</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>t</string>
+				<key>placeholder</key>
+				<string>t</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Find file</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_files</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>p</string>
+				<key>placeholder</key>
+				<string>p</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Pipelines</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_pipelines</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>branch</string>
+				<key>placeholder</key>
+				<string>branch</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Branches</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_branches</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>b</string>
+				<key>placeholder</key>
+				<string>b</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Issue boards</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_boards</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>f</string>
+				<key>placeholder</key>
+				<string>f</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Repository</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_repository</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>c</string>
+				<key>placeholder</key>
+				<string>c</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Commits</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_commits</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>j</string>
+				<key>placeholder</key>
+				<string>j</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Jobs</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_jobs</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>r</string>
+				<key>placeholder</key>
+				<string>r</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Releases</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_releases</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>w</string>
+				<key>placeholder</key>
+				<string>w</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Wiki</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_wiki</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>e</string>
+				<key>placeholder</key>
+				<string>e</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Environments</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_environments</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>.</string>
+				<key>placeholder</key>
+				<string>.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Web IDE</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_web_ide</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>settings</string>
+				<key>placeholder</key>
+				<string>settings</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu.</string>
+			<key>label</key>
+			<string>Settings</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_settings</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://pbb.io</string>
+</dict>
+</plist>

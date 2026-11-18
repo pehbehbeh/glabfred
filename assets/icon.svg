@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FC6D26"/>
+      <stop offset="0.55" stop-color="#E24329"/>
+      <stop offset="1" stop-color="#8F3BA8"/>
+    </linearGradient>
+    <linearGradient id="glyph" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1E9F7"/>
+    </linearGradient>
+    <linearGradient id="felt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4A4A4F"/>
+      <stop offset="0.45" stop-color="#1C1C20"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="brim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2A2A2E"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6A2FA0"/>
+      <stop offset="1" stop-color="#3E1462"/>
+    </linearGradient>
+    <linearGradient id="brimTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A3A40"/>
+      <stop offset="1" stop-color="#141416"/>
+    </linearGradient>
+    <radialGradient id="shine">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="dome">
+      <path d="M6.8 8C6.4 3.4 8.8 .6 12 .6S17.6 3.4 17.2 8Q12 9.7 6.8 8Z"/>
+    </clipPath>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#3B0A2E" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- macOS icon grid: 824px body inside the 1024px canvas -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+
+  <g transform="translate(512 530) scale(22) translate(-12 -12)" filter="url(#shadow)">
+    <!-- GitLab tanuki, path from simple-icons (CC0) -->
+    <path fill="url(#glyph)" d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/>
+
+    <!-- Alfred's bowler hat, sitting between the ears -->
+    <g transform="rotate(-6 12 8)">
+    <path fill="url(#brimTop)" d="M4 6.5C5 6 8 6.2 12 6.3S19 6 20 6.5C19 8.5 16 9.8 12 9.8S5 8.5 4 6.5Z"/>
+    <path fill="url(#felt)" d="M6.8 8C6.4 3.4 8.8 .6 12 .6S17.6 3.4 17.2 8Q12 9.7 6.8 8Z"/>
+    <path clip-path="url(#dome)" fill="url(#band)" d="M6 5.2Q12 7.1 18 5.2V10H6Z"/>
+    <ellipse cx="9.6" cy="2.9" rx="1.9" ry="0.9" fill="url(#shine)" transform="rotate(-38 9.6 2.9)"/>
+    <path fill="url(#brim)" d="M4 6.5C5 8.5 8 9.8 12 9.8S19 8.5 20 6.5C19.9 8.2 16.8 10.8 12 10.8S4.1 8.2 4 6.5Z"/>
+    </g>
+  </g>
+</svg>
