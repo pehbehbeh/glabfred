@@ -1,6 +1,10 @@
 # glabfred
 
-<img src="icon.png" alt="glabfred icon" width="128" align="right">
+<img src="icon.png" alt="glabfred icon" width="96" align="right">
+
+[![Latest release](https://img.shields.io/github/v/release/pehbehbeh/glabfred)](https://github.com/pehbehbeh/glabfred/releases/latest)
+[![Tests](https://github.com/pehbehbeh/glabfred/actions/workflows/test.yml/badge.svg)](https://github.com/pehbehbeh/glabfred/actions/workflows/test.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 [Alfred](https://www.alfredapp.com) workflow to search your GitLab projects and jump to their merge requests, issues and more, on every host you're logged in to with the [GitLab CLI](https://gitlab.com/gitlab-org/cli) (glab). It reads hosts and tokens from glab, so the workflow has no login of its own.
 
