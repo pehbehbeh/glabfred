@@ -28,7 +28,7 @@ Search your projects via the `glab` keyword. You can change the keyword in the W
 
 If the same path exists on two hosts, the host goes in front (`gitlab.com/team/app`).
 
-The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`, so `g+m` is `m`. `i` opens the issues list instead of GitLab's new issue page. An exact shortcut comes first, so `t` and `i` don't end up below the titles that contain those letters.
+The project menu mostly follows GitLab's [keyboard shortcuts](https://docs.gitlab.com/user/shortcuts/), without the `g+` (`g+m` is `m`). `i` opens the issues list instead of GitLab's new issue page. An exact shortcut comes first, so `t` and `i` don't end up below the titles that contain those letters.
 
 ```
 glab <search>                  projects
@@ -92,7 +92,5 @@ bun test
 The tests run with Bun. They cover the query router, the menu and the mapping of API responses, without calling GitLab.
 
 To add a list, create a file in `lib/views/` that exports `id`, `defaultKey`, `title`, `aliases`, `unit`, `ttl`, `page`, `endpoint` and `toEntries`, plus `paginate` for endpoints with more than 100 results and `create` for a ⌥↩ create page (see `lib/views/merge-requests.js`). Add it to `lib/views/index.js`, and add a text field with the variable `shortcut_<id>` to the Workflow's Configuration in Alfred.
-
-The icon is `assets/icon.svg`. `sh scripts/icon.sh` renders it to `icon.png` with headless Chrome, Brave or Chromium (one of them has to be installed, for the SVG filters and gradients).
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org). [release-please](https://github.com/googleapis/release-please) keeps a release PR open that bumps the version in `package.json` and `info.plist` and updates `CHANGELOG.md`. Merging it tags the release, and the release workflow attaches the built `.alfredworkflow`.
