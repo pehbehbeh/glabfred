@@ -219,10 +219,10 @@ Search your projects on all GitLab hosts via the `glab` keyword.
 * &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the project in the browser.
 * &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy the project path.
 
-The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`. Type `m` for merge requests, `i` for issues, `t` to find a file, `p` for pipelines, `c` for commits, `branch` for branches, `tag` for tags and `r` for releases. These open a searchable list.
+The project menu uses GitLab's [project shortcuts](https://docs.gitlab.com/user/shortcuts/) without the `g+`. Type `m` for merge requests, `i` for issues, `t` to find a file, `p` for pipelines, `c` for commits, `branch` for branches, `tag` for tags, `r` for releases and `milestone` for milestones. These open a searchable list.
 
 * &lt;kbd&gt;↩&lt;/kbd&gt; Open the entry in the browser.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name).
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, or the milestone as `%name`).
 * &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;C&lt;/kbd&gt; Copy its URL.
 
 The other shortcuts open a page directly: `b` boards, `f` repository, `j` jobs, `w` wiki, `e` environments, `.` Web IDE and `settings`. On a list entry in the project menu:
@@ -517,6 +517,27 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<string>textfield</string>
 			<key>variable</key>
 			<string>shortcut_releases</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>milestone</string>
+				<key>placeholder</key>
+				<string>milestone</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Milestones</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_milestones</string>
 		</dict>
 		<dict>
 			<key>config</key>

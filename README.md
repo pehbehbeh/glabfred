@@ -36,10 +36,10 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, or the milestone as `%name`).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -59,6 +59,7 @@ On a list entry in the project menu:
 | `branch` | | Branches | Lists all branches in Alfred, newest commit first. Search by name. |
 | `tag` | | Tags | Lists all tags in Alfred, newest first. Search by name, message or commit title. |
 | `r` | `release` | Releases | Lists all releases in Alfred. Search by name, tag or release notes. |
+| `milestone` | | Milestones | Lists active milestones in Alfred, next due date first. Search by title or description. |
 | `b` | | Issue boards | Opens the project's issue boards in the browser. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
@@ -80,7 +81,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects, files | 1 hour |
-| branches, tags, releases | 10 minutes |
+| branches, tags, releases, milestones | 10 minutes |
 | merge requests, issues, pipelines, commits | 1 minute |
 
 ## Development
