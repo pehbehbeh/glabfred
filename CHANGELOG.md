@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/pehbehbeh/glabfred/compare/v1.1.0...v1.2.0) (2026-11-19)
+
+
+### Features
+
+* find issues and merge requests by number, closed and merged too ([089f538](https://github.com/pehbehbeh/glabfred/commit/089f538b48b506ca18889dac0dcbadbc20e2b6ac))
+
+
+### Bug Fixes
+
+* keep unreachable hosts in the project list ([c806b4a](https://github.com/pehbehbeh/glabfred/commit/c806b4ad33453f62e16525a2b70f9d8f4b96bcbf))
+
 ## [1.1.0](https://github.com/pehbehbeh/glabfred/compare/v1.0.0...v1.1.0) (2026-11-19)
 
 
