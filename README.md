@@ -52,8 +52,8 @@ On a list entry in the project menu:
 
 | Key | Aliases | Opens | Details |
 |---|---|---|---|
-| `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. A number alone (`42` or `!42`) also finds closed and merged MRs. |
-| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A number alone (`42` or `#42`) also finds closed issues. A board column is usually a label, so `i doing` shows that column. |
+| `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. A number alone (`42` or `!42`) also finds closed and merged MRs, and the text search finds them too for 30 days after. |
+| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A number alone (`42` or `#42`) also finds closed issues, and the text search finds them too for 30 days after. A board column is usually a label, so `i doing` shows that column. |
 | `t` | `file`, `find` | Find file | Lists the files and folders on the default branch in Alfred. Search by path. ⌘↩ opens a file in GitLab's editor. |
 | `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
 | `j` | `job` | Jobs | Lists the last 100 CI/CD jobs in Alfred. Search by name, stage, branch, status or ID. |
