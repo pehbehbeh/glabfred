@@ -155,3 +155,10 @@ test("the branch picker skips the default branch and links to a prefilled new me
   expect(entries.map((e) => e.title)).toEqual(["fix/login"]);
   expect(entries[0].url).toBe("https://gitlab.example.com/team/app/-/merge_requests/new?merge_request[source_branch]=fix%2Flogin");
 });
+
+test("code search points at the line with the hit, not the start of the chunk", () => {
+  const [hit] = findView("/").toEntries([{ path: "app/C#/State.php", ref: "develop", startline: 5, data: "<?php\n\nnamespace App;\n\nenum LendingState: string\n" }], project, "lendingstate");
+  expect(hit.title).toBe("app/C#/State.php:9");
+  expect(hit.subtitle).toBe("enum LendingState: string");
+  expect(hit.url).toBe("https://gitlab.example.com/team/app/-/blob/develop/app/C%23/State.php#L9");
+});

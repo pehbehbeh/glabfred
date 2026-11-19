@@ -37,10 +37,10 @@ glab <project> m <search>      open merge requests
 glab R <search>                review requests on all hosts
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs, snippets):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs, snippets, code search):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL, the wiki page's path or the snippet as `$12`).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL, the wiki page's path, the snippet as `$12` or the code hit as `path:line`).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -55,6 +55,7 @@ On a list entry in the project menu:
 | `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. A number alone (`42` or `!42`) also finds closed and merged MRs, and the text search finds them too for 30 days after. |
 | `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A number alone (`42` or `#42`) also finds closed issues, and the text search finds them too for 30 days after. A board column is usually a label, so `i doing` shows that column. |
 | `t` | `file`, `find` | Find file | Lists the files and folders on the default branch in Alfred. Search by path. ⌘↩ opens a file in GitLab's editor. |
+| `/` | `code` | Code search | Searches the code of the project via GitLab, from 3 characters on. Each hit opens the file at the matching line. GitLab searches the default branch only. |
 | `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
 | `j` | `job` | Jobs | Lists the last 100 CI/CD jobs in Alfred. Search by name, stage, branch, status or ID. |
 | `c` | `commit` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |
