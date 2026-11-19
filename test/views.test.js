@@ -114,3 +114,12 @@ test("boards show their label columns", () => {
   expect(board.subtitle).toBe("Doing · Review");
   expect(board.url).toBe("https://gitlab.example.com/team/app/-/boards/5");
 });
+
+test("jobs show status, stage and branch", () => {
+  const [job] = findView("j").toEntries([
+    { id: 42, name: "test", stage: "test", ref: "main", status: "failed", web_url: "u", created_at: "2026-01-01T00:00:00Z", finished_at: null },
+  ]);
+  expect(job.title).toBe("❌ test");
+  expect(job.subtitle).toBe("#42 · test · main · failed");
+  expect(job.time).toBe("2026-01-01T00:00:00Z");
+});

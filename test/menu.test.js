@@ -14,8 +14,8 @@ test("views autocomplete into the list, pages link directly", () => {
   const [mrs] = menuItems(project, "team/app ", "m");
   expect(mrs.autocomplete).toBe("team/app m ");
   expect(mrs.valid).toBe(false);
-  const [jobs] = menuItems(project, "team/app ", "j");
-  expect(jobs.arg).toBe("https://gitlab.example.com/team/app/-/jobs");
+  const [repository] = menuItems(project, "team/app ", "f");
+  expect(repository.arg).toBe("https://gitlab.example.com/team/app/-/tree/main");
 });
 
 test("the Web IDE link starts at the host, not the project", () => {
