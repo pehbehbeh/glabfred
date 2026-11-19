@@ -83,6 +83,13 @@ Capital letters open lists across all projects and hosts, like GitLab's global s
 
 Search merge requests by reference (`team/app!12`), title, author or source branch, and issues by reference, title, assignee or label. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
 
+### Commands
+
+`glab ?` lists the commands. Type after the `?` to filter them.
+
+- **Refresh cache** clears the cache and opens `glab` again, so every list loads fresh from GitLab.
+- **Each logged-in host** shows how many projects it has, or why loading them failed. <kbd>↩</kbd> opens the host in the browser, <kbd>⌥</kbd><kbd>↩</kbd> copies its name.
+
 ## Installation
 
 Download [glabfred.alfredworkflow](https://github.com/pehbehbeh/glabfred/releases/latest/download/glabfred.alfredworkflow) from the latest release and open it. The [releases page](https://github.com/pehbehbeh/glabfred/releases) has older versions and the changelog.

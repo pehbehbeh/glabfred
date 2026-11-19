@@ -32,3 +32,8 @@ test("a host prefix picks the project when the same path exists on two hosts", (
   expect(projectKey(api, projects)).toBe("team/api");
   expect(route("gitlab.com/team/app ", projects).project).toBe(appMirror);
 });
+
+test("the commands key opens the commands before anything else", () => {
+  expect(route("?", projects)).toEqual({ type: "commands", query: "" });
+  expect(route("?host", projects)).toEqual({ type: "commands", query: "host" });
+});
