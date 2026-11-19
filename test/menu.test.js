@@ -28,9 +28,9 @@ test("cached counts show up in the subtitle", () => {
   expect(mrs.subtitle).toMatch(/3 open/);
 });
 
-test("⌥ on merge requests and issues opens the create page", () => {
+test("⌥ on merge requests opens the branch picker, on issues the create page", () => {
   const [mrs] = menuItems(project, "team/app ", "m");
-  expect(mrs.mods.alt).toEqual({ valid: true, arg: "https://gitlab.example.com/team/app/-/merge_requests/new", subtitle: "New merge request", variables: { action: "open" } });
+  expect(mrs.mods.alt).toEqual({ valid: true, arg: "team/app new ", subtitle: "New merge request from a branch", variables: { action: "search" } });
   const [issues] = menuItems(project, "team/app ", "i");
   expect(issues.mods.alt.arg).toBe("https://gitlab.example.com/team/app/-/issues/new");
   const [files] = menuItems(project, "team/app ", "t");
@@ -41,4 +41,8 @@ test("the Web IDE link keeps a relative URL root", () => {
   const sub = { ...project, url: "https://example.com/gitlab/team/app" };
   const [ide] = menuItems(sub, "team/app ", ".");
   expect(ide.arg).toBe("https://example.com/gitlab/-/ide/project/team/app/edit/main");
+});
+
+test("the branch picker is not in the menu", () => {
+  expect(menuItems(project, "team/app ", "").some((i) => i.autocomplete === "team/app new ")).toBe(false);
 });

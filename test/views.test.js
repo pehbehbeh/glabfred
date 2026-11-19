@@ -145,3 +145,13 @@ test("snippets copy a $ reference, with the project path outside the project", a
   const personal = snippetEntry({ ...snippet, project_id: null, web_url: "https://gitlab.example.com/-/snippets/12" });
   expect(personal.copy).toBe("$12");
 });
+
+test("the branch picker skips the default branch and links to a prefilled new merge request", () => {
+  const branches = findView("branch").toEntries([
+    { name: "main", default: true, commit: { committed_date: "2026-03-01T00:00:00Z" } },
+    { name: "fix/login", default: false, web_url: "b", commit: { committed_date: "2026-02-01T00:00:00Z", author_name: "Anna" } },
+  ]);
+  const entries = findView("new").fromCache(branches, project);
+  expect(entries.map((e) => e.title)).toEqual(["fix/login"]);
+  expect(entries[0].url).toBe("https://gitlab.example.com/team/app/-/merge_requests/new?merge_request[source_branch]=fix%2Flogin");
+});

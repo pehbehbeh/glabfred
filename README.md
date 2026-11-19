@@ -46,7 +46,7 @@ In a list (merge requests, issues, files, pipelines, commits, branches, tags, re
 On a list entry in the project menu:
 
 - <kbd>⌘</kbd><kbd>↩</kbd> Open the whole list in GitLab.
-- <kbd>⌥</kbd><kbd>↩</kbd> On Merge requests, Issues or Snippets, create a new one.
+- <kbd>⌥</kbd><kbd>↩</kbd> On Issues or Snippets, create a new one. On Merge requests, pick the source branch first: it lists the branches, newest first, and <kbd>↩</kbd> opens a new merge request from the chosen one.
 
 ### Shortcuts
 
