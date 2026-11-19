@@ -51,8 +51,8 @@ On a list entry in the project menu:
 
 | Key | Aliases | Opens | Details |
 |---|---|---|---|
-| `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
-| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A board column is usually a label, so `i doing` shows that column. |
+| `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. A number alone (`42` or `!42`) also finds closed and merged MRs. |
+| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A number alone (`42` or `#42`) also finds closed issues. A board column is usually a label, so `i doing` shows that column. |
 | `t` | `file`, `find` | Find file | Lists the files and folders on the default branch in Alfred. Search by path. ⌘↩ opens a file in GitLab's editor. |
 | `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
 | `j` | `job` | Jobs | Lists the last 100 CI/CD jobs in Alfred. Search by name, stage, branch, status or ID. |
@@ -100,6 +100,6 @@ bun test
 
 The tests run with Bun. They cover the query router, the menu and the mapping of API responses, without calling GitLab.
 
-To add a list, create a file in `lib/views/` that exports `id`, `defaultKey`, `title`, `aliases`, `unit`, `ttl`, `page`, `endpoint` and `toEntries`, plus `paginate` for endpoints with more than 100 results and `create` for a ⌥↩ create page (see `lib/views/merge-requests.js`). Add it to `lib/views/index.js`, and add a text field with the variable `shortcut_<id>` to the Workflow's Configuration in Alfred.
+To add a list, create a file in `lib/views/` that exports `id`, `defaultKey`, `title`, `aliases`, `unit`, `ttl`, `page`, `endpoint` and `toEntries`, plus `paginate` for endpoints with more than 100 results, `byNumber` to look up a single entry by number that isn't in the list (its entries then need an `iid`), and `create` for a ⌥↩ create page (see `lib/views/merge-requests.js`). Add it to `lib/views/index.js`, and add a text field with the variable `shortcut_<id>` to the Workflow's Configuration in Alfred.
 
 Commits follow [Conventional Commits](https://www.conventionalcommits.org). [release-please](https://github.com/googleapis/release-please) keeps a release PR open that bumps the version in `package.json` and `info.plist` and updates `CHANGELOG.md`. Merging it tags the release, and the release workflow attaches the built `.alfredworkflow`.

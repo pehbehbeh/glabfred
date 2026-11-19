@@ -126,3 +126,10 @@ test("jobs show status, stage and branch", () => {
   expect(job.subtitle).toBe("#42 · test · main · failed");
   expect(job.time).toBe("2026-01-01T00:00:00Z");
 });
+
+test("closed issues and merged merge requests say so", () => {
+  const [issue] = findView("i").toEntries([{ iid: 3, title: "Old", state: "closed", assignees: [], labels: ["bug"], web_url: "u" }]);
+  expect(issue.subtitle).toBe("closed · bug");
+  const [mr] = findView("m").toEntries([{ iid: 4, title: "Done", state: "merged", source_branch: "a", target_branch: "main", web_url: "u" }]);
+  expect(mr.subtitle).toBe("merged · a → main");
+});
