@@ -55,3 +55,10 @@ test("writeRefresh stores the result and removes the lock, even when it fails", 
   await expect(writeRefresh("failed", async () => { throw new Error("boom"); })).rejects.toThrow();
   expect(existsSync(`${dir}/failed.json.lock`)).toBe(false);
 });
+
+test("a fresh cache that isStale rejects is refreshed", async () => {
+  put("other-number", { number: "1", data: [] });
+  expect((await cached("other-number", HOUR, [], (c) => c.number !== "12")).loading).toBe(true);
+  put("same-number", { number: "12", data: [] });
+  expect((await cached("same-number", HOUR, [], (c) => c.number !== "12")).loading).toBe(false);
+});
