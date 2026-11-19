@@ -56,7 +56,7 @@ test("the key alone opens the list without a trailing space", () => {
 });
 
 test("the lists show above the projects only on an empty query", () => {
-  expect(mineItems("").map((i) => i.autocomplete)).toEqual(["M ", "I ", "R ", "T "]);
+  expect(mineItems("").map((i) => i.autocomplete)).toEqual(["M ", "I ", "R ", "T ", "S "]);
   expect(mineItems("I")).toEqual([]);
 });
 

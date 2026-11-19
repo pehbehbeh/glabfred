@@ -37,16 +37,16 @@ glab <project> m <search>      open merge requests
 glab R <search>                review requests on all hosts
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs, snippets):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL or the wiki page's path).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL, the wiki page's path or the snippet as `$12`).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
 
 - <kbd>⌘</kbd><kbd>↩</kbd> Open the whole list in GitLab.
-- <kbd>⌥</kbd><kbd>↩</kbd> On Merge requests or Issues, create a new one.
+- <kbd>⌥</kbd><kbd>↩</kbd> On Merge requests, Issues or Snippets, create a new one.
 
 ### Shortcuts
 
@@ -65,6 +65,7 @@ On a list entry in the project menu:
 | `e` | `env` | Environments | Lists available environments in Alfred, last updated first. Search by name, tier or URL. ↩ opens the deployed app, ⌘↩ the environment in GitLab. |
 | `w` | | Wiki | Lists all wiki pages in Alfred. Search by title or path. |
 | `b` | `board` | Issue boards | Lists the project's issue boards in Alfred with their label columns. Search by name or column. |
+| `s` | `snippet` | Snippets | Lists the project's snippets in Alfred. Search by `$` number, title, description, file name or author. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `.` | | Web IDE | Opens the default branch in GitLab's Web IDE. |
 | `settings` | | Settings | Opens the project settings in the browser. |
@@ -73,7 +74,7 @@ You can change every key in the Workflow's Configuration. The keys for lists hav
 
 ### Your lists on all hosts
 
-Capital letters open lists across all projects and hosts, like GitLab's global shortcuts <kbd>⇧</kbd><kbd>M</kbd>, <kbd>⇧</kbd><kbd>I</kbd>, <kbd>⇧</kbd><kbd>R</kbd> and <kbd>⇧</kbd><kbd>T</kbd>. An empty `glab` shows them above the projects.
+Capital letters open lists across all projects and hosts, like GitLab's global shortcuts <kbd>⇧</kbd><kbd>M</kbd>, <kbd>⇧</kbd><kbd>I</kbd>, <kbd>⇧</kbd><kbd>R</kbd>, <kbd>⇧</kbd><kbd>T</kbd> and <kbd>⇧</kbd><kbd>S</kbd>. An empty `glab` shows them above the projects.
 
 | Key | Opens | Details |
 |---|---|---|
@@ -81,8 +82,9 @@ Capital letters open lists across all projects and hosts, like GitLab's global s
 | `I` | My issues | Open issues assigned to you. |
 | `R` | Review requests | Open MRs where you are a reviewer. |
 | `T` | To-do items | Your pending to-do items, with what triggered them (review requested, mentioned, build failed). |
+| `S` | My snippets | Snippets you created, personal and in projects. |
 
-Search merge requests by reference (`team/app!12`), title, author or source branch, issues by reference, title, assignee or label, and to-do items by reference, title, action or author. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
+Search merge requests by reference (`team/app!12`), title, author or source branch, issues by reference, title, assignee or label, to-do items by reference, title, action or author, and snippets by `$` number, title, description, file name or project. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
 
 ### Commands
 

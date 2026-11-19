@@ -497,6 +497,27 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>s</string>
+				<key>placeholder</key>
+				<string>s</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
+			<key>label</key>
+			<string>Snippets</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_snippets</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>f</string>
 				<key>placeholder</key>
 				<string>f</string>
@@ -765,6 +786,27 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<string>textfield</string>
 			<key>variable</key>
 			<string>shortcut_todos</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>S</string>
+				<key>placeholder</key>
+				<string>S</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Opens the list across all hosts. Case-sensitive, one word, no spaces.</string>
+			<key>label</key>
+			<string>My snippets</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_my_snippets</string>
 		</dict>
 		<dict>
 			<key>config</key>

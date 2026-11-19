@@ -133,3 +133,15 @@ test("closed issues and merged merge requests say so", () => {
   const [mr] = findView("m").toEntries([{ iid: 4, title: "Done", state: "merged", source_branch: "a", target_branch: "main", web_url: "u" }]);
   expect(mr.subtitle).toBe("merged · a → main");
 });
+
+test("snippets copy a $ reference, with the project path outside the project", async () => {
+  const snippet = { id: 12, title: "Export", project_id: 7, web_url: "https://gitlab.example.com/team/app/-/snippets/12", files: [{ path: "export.sh" }], author: { username: "anna" }, visibility: "private" };
+  const [inProject] = findView("s").toEntries([snippet], project);
+  expect(inProject.copy).toBe("$12");
+  expect(inProject.subtitle).toBe("$12 · export.sh · anna · private");
+  const { snippetEntry } = await import("../lib/views/snippets.js");
+  expect(snippetEntry(snippet).copy).toBe("team/app$12");
+  expect(snippetEntry(snippet).subtitle).toBe("$12 · team/app · export.sh · anna · private");
+  const personal = snippetEntry({ ...snippet, project_id: null, web_url: "https://gitlab.example.com/-/snippets/12" });
+  expect(personal.copy).toBe("$12");
+});
