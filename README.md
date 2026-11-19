@@ -53,7 +53,7 @@ On a list entry in the project menu:
 |---|---|---|---|
 | `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
 | `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A board column is usually a label, so `i doing` shows that column. |
-| `t` | `file`, `find` | Find file | Lists the files on the default branch in Alfred. Search by path. ⌘↩ opens the file in GitLab's editor. |
+| `t` | `file`, `find` | Find file | Lists the files and folders on the default branch in Alfred. Search by path. ⌘↩ opens a file in GitLab's editor. |
 | `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
 | `j` | `job` | Jobs | Lists the last 100 CI/CD jobs in Alfred. Search by name, stage, branch, status or ID. |
 | `c` | `commit` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |

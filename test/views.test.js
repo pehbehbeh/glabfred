@@ -12,7 +12,7 @@ test("merge requests carry the reference to copy", () => {
   expect(entry.subtitle).toBe("anna · draft · fix-login → main");
 });
 
-test("files keep only blobs, shortest path first, with each path segment encoded in the URL", () => {
+test("files and folders, shortest path first, with each path segment encoded in the URL", () => {
   const entries = findView("t").toEntries(
     [
       { type: "tree", path: "src", name: "src" },
@@ -21,9 +21,11 @@ test("files keep only blobs, shortest path first, with each path segment encoded
     ],
     project,
   );
-  expect(entries.map((e) => e.copy)).toEqual(["README.md", "src/C#/what?.js"]);
-  expect(entries[1].url).toBe("https://gitlab.example.com/team/app/-/blob/release/1.x/src/C%23/what%3F.js");
-  expect(entries[1].cmdUrl).toBe("https://gitlab.example.com/team/app/-/edit/release/1.x/src/C%23/what%3F.js");
+  expect(entries.map((e) => e.title)).toEqual(["src/", "README.md", "what?.js"]);
+  expect(entries[0].url).toBe("https://gitlab.example.com/team/app/-/tree/release/1.x/src");
+  expect(entries[0].cmdUrl).toBe(undefined);
+  expect(entries[2].url).toBe("https://gitlab.example.com/team/app/-/blob/release/1.x/src/C%23/what%3F.js");
+  expect(entries[2].cmdUrl).toBe("https://gitlab.example.com/team/app/-/edit/release/1.x/src/C%23/what%3F.js");
 });
 
 test("a configured list key with a space or a clash falls back to the default", () => {
