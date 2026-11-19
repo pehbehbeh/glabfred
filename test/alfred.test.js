@@ -11,7 +11,7 @@ test("entries whose title matches come before path-only matches", () => {
 });
 
 test("a number query finds its exact entry first", () => {
-  expect(["42", "#42", "!42", " 42 "].map(numberQuery)).toEqual(["42", "42", "42", "42"]);
+  expect(["42", "#42", "!42", " 42 ", "042"].map(numberQuery)).toEqual(["42", "42", "42", "42", "42"]);
   expect(["42 fix", "#", "abc"].map(numberQuery)).toEqual([undefined, undefined, undefined]);
   const entries = [{ iid: 123 }, { iid: 512 }, { iid: 12 }];
   expect(exactNumberFirst(entries, "12").map((e) => e.iid)).toEqual([12, 123, 512]);
