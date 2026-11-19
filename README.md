@@ -105,8 +105,10 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects (including starred ones), files | 1 hour |
-| branches, tags, releases, milestones, environments, wiki pages, boards | 10 minutes |
+| issues and merge requests looked up by number | 1 hour, kept for 30 days |
+| branches, tags, releases, milestones, environments, wiki pages, boards, snippets, code searches | 10 minutes |
 | merge requests, issues, pipelines, jobs, commits, your lists on all hosts | 1 minute |
+| branches for a new merge request | 15 seconds |
 
 ## Development
 

@@ -59,7 +59,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+				<string>A3F07C51-9D2E-4B68-8E14-5C7B2D9A6F30</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -88,6 +88,43 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A3F07C51-9D2E-4B68-8E14-5C7B2D9A6F30</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8F14A2B-3C6D-4B7E-9A10-2F5D6C8B9E71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string/>
+				<key>sourceoutputuid</key>
+				<string>B81E4D27-0C6A-4F93-A2D5-7E9C3B1F8A42</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4A81D6E-2F9B-4E37-8D05-6B3E1A9F7C24</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string/>
+				<key>sourceoutputuid</key>
+				<string>D25C9A13-7E4F-4B01-9C68-3A2F5E8D1B74</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>478E5903-DF13-4546-8719-5E29A53D6016</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string/>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Phil-Bastian Berndt</string>
@@ -99,6 +136,52 @@
 	<string>glabfred</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>refresh</string>
+						<key>outputlabel</key>
+						<string>Refresh</string>
+						<key>uid</key>
+						<string>B81E4D27-0C6A-4F93-A2D5-7E9C3B1F8A42</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>search</string>
+						<key>outputlabel</key>
+						<string>Search</string>
+						<key>uid</key>
+						<string>D25C9A13-7E4F-4B01-9C68-3A2F5E8D1B74</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>A3F07C51-9D2E-4B68-8E14-5C7B2D9A6F30</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -262,7 +345,7 @@ else echo "{\"items\":[{\"title\":\"No JavaScript runtime found\",\"subtitle\":\
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.bun/bin:$HOME/.local/share/mise/shims:$HOME/.volta/bin:$PATH"
 if command -v bun &gt;/dev/null; then bun main.js --cache clear
 elif command -v node &gt;/dev/null; then node main.js --cache clear; fi
-osascript -e "tell application id \"com.runningwithcrayons.Alfred\" to search \"$keyword \""</string>
+osascript -e 'on run argv' -e 'tell application id "com.runningwithcrayons.Alfred" to search (item 1 of argv)' -e 'end run' "$keyword "</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -370,6 +453,13 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<real>330</real>
 			<key>ypos</key>
 			<real>650</real>
+		</dict>
+		<key>A3F07C51-9D2E-4B68-8E14-5C7B2D9A6F30</key>
+		<dict>
+			<key>xpos</key>
+			<real>200</real>
+			<key>ypos</key>
+			<real>40</real>
 		</dict>
 		<key>CC12EF8B-97E2-4DA6-989E-6E766336576D</key>
 		<dict>
