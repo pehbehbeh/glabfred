@@ -34,6 +34,7 @@ The project menu mostly follows GitLab's [keyboard shortcuts](https://docs.gitla
 glab <search>                  projects
 glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
+glab R <search>                review requests on all hosts
 ```
 
 In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs):
@@ -69,6 +70,18 @@ On a list entry in the project menu:
 | `settings` | | Settings | Opens the project settings in the browser. |
 
 You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
+
+### Your lists on all hosts
+
+Capital letters open lists across all projects and hosts, like GitLab's global shortcuts <kbd>⇧</kbd><kbd>M</kbd>, <kbd>⇧</kbd><kbd>I</kbd> and <kbd>⇧</kbd><kbd>R</kbd>. An empty `glab` shows them above the projects.
+
+| Key | Opens | Details |
+|---|---|---|
+| `M` | My merge requests | Open MRs you created or are assigned to. |
+| `I` | My issues | Open issues assigned to you. |
+| `R` | Review requests | Open MRs where you are a reviewer. |
+
+Search merge requests by reference (`team/app!12`), title, author or source branch, and issues by reference, title, assignee or label. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
 
 ## Installation
 

@@ -623,6 +623,69 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<key>variable</key>
 			<string>shortcut_settings</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>M</string>
+				<key>placeholder</key>
+				<string>M</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Opens the list across all hosts. Case-sensitive, one word, no spaces.</string>
+			<key>label</key>
+			<string>My merge requests</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_my_merge_requests</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>I</string>
+				<key>placeholder</key>
+				<string>I</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Opens the list across all hosts. Case-sensitive, one word, no spaces.</string>
+			<key>label</key>
+			<string>My issues</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_my_issues</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>R</string>
+				<key>placeholder</key>
+				<string>R</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Opens the list across all hosts. Case-sensitive, one word, no spaces.</string>
+			<key>label</key>
+			<string>Review requests</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>shortcut_review_requests</string>
+		</dict>
 	</array>
 	<key>variables</key>
 	<dict/>
