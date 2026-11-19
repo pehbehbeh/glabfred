@@ -23,6 +23,7 @@ test("files keep only blobs, shortest path first, with each path segment encoded
   );
   expect(entries.map((e) => e.copy)).toEqual(["README.md", "src/C#/what?.js"]);
   expect(entries[1].url).toBe("https://gitlab.example.com/team/app/-/blob/release/1.x/src/C%23/what%3F.js");
+  expect(entries[1].cmdUrl).toBe("https://gitlab.example.com/team/app/-/edit/release/1.x/src/C%23/what%3F.js");
 });
 
 test("a configured list key with a space or a clash falls back to the default", () => {
