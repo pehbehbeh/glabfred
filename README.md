@@ -26,7 +26,7 @@ Search your projects via the `glab` keyword. You can change the keyword in the W
 - <kbd>⌘</kbd><kbd>↩</kbd> Open the project in the browser.
 - <kbd>⌥</kbd><kbd>↩</kbd> Copy the project path.
 
-If the same path exists on two hosts, the host goes in front (`gitlab.com/team/app`).
+Projects you starred in GitLab come first and have a ★, including starred projects you aren't a member of. If the same path exists on two hosts, the host goes in front (`gitlab.com/team/app`).
 
 The project menu mostly follows GitLab's [keyboard shortcuts](https://docs.gitlab.com/user/shortcuts/), without the `g+` (`g+m` is `m`). `i` opens the issues list instead of GitLab's new issue page. An exact shortcut comes first, so `t` and `i` don't end up below the titles that contain those letters.
 
@@ -93,9 +93,9 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 
 | Data | Refreshed after |
 |---|---|
-| projects, files | 1 hour |
+| projects (including starred ones), files | 1 hour |
 | branches, tags, releases, milestones, environments, wiki pages, boards | 10 minutes |
-| merge requests, issues, pipelines, jobs, commits | 1 minute |
+| merge requests, issues, pipelines, jobs, commits, your lists on all hosts | 1 minute |
 
 ## Development
 
