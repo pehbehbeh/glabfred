@@ -763,16 +763,16 @@ You can change the keyword and every shortcut in the Workflow's Configuration.</
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>settings</string>
+				<string>,</string>
 				<key>placeholder</key>
-				<string>settings</string>
+				<string>,</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Shortcut in the project menu.</string>
+			<string>Shortcut in the project menu. One word, no spaces.</string>
 			<key>label</key>
 			<string>Settings</string>
 			<key>type</key>

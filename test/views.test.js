@@ -162,3 +162,10 @@ test("code search points at the line with the hit, not the start of the chunk", 
   expect(hit.subtitle).toBe("enum LendingState: string");
   expect(hit.url).toBe("https://gitlab.example.com/team/app/-/blob/develop/app/C%23/State.php#L9");
 });
+
+test("settings find a section by a word that isn't in its title", () => {
+  const entries = findView(",").entries(project);
+  const hit = entries.find((e) => e.haystack.includes("secrets"));
+  expect(hit.title).toBe("Variables");
+  expect(hit.url).toBe("https://gitlab.example.com/team/app/-/settings/ci_cd#js-cicd-variables-settings");
+});

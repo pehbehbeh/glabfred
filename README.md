@@ -37,10 +37,10 @@ glab <project> m <search>      open merge requests
 glab R <search>                review requests on all hosts
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs, snippets, code search):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards, jobs, snippets, code search, settings):
 
 - <kbd>↩</kbd> Open the entry in the browser.
-- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL, the wiki page's path, the snippet as `$12` or the code hit as `path:line`).
+- <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL, the wiki page's path, the snippet as `$12`, the code hit as `path:line` or the settings section's URL).
 - <kbd>⌘</kbd><kbd>C</kbd> Copy its URL.
 
 On a list entry in the project menu:
@@ -69,7 +69,7 @@ On a list entry in the project menu:
 | `s` | `snippet` | Snippets | Lists the project's snippets in Alfred. Search by `$` number, title, description, file name or author. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `.` | | Web IDE | Opens the default branch in GitLab's Web IDE. |
-| `settings` | | Settings | Opens the project settings in the browser. |
+| `,` | `settings` | Settings | Lists the project's settings pages and their sections in Alfred, such as CI/CD variables or protected branches. Search by name or a related word (`secrets`, `archive`, `ssh`). ↩ opens the section. |
 
 You can change every key in the Workflow's Configuration. The keys for lists have to be one word, because a space after the key opens the list.
 
