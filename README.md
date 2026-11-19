@@ -73,15 +73,16 @@ You can change every key in the Workflow's Configuration. The keys for lists hav
 
 ### Your lists on all hosts
 
-Capital letters open lists across all projects and hosts, like GitLab's global shortcuts <kbd>⇧</kbd><kbd>M</kbd>, <kbd>⇧</kbd><kbd>I</kbd> and <kbd>⇧</kbd><kbd>R</kbd>. An empty `glab` shows them above the projects.
+Capital letters open lists across all projects and hosts, like GitLab's global shortcuts <kbd>⇧</kbd><kbd>M</kbd>, <kbd>⇧</kbd><kbd>I</kbd>, <kbd>⇧</kbd><kbd>R</kbd> and <kbd>⇧</kbd><kbd>T</kbd>. An empty `glab` shows them above the projects.
 
 | Key | Opens | Details |
 |---|---|---|
 | `M` | My merge requests | Open MRs you created or are assigned to. |
 | `I` | My issues | Open issues assigned to you. |
 | `R` | Review requests | Open MRs where you are a reviewer. |
+| `T` | To-do items | Your pending to-do items, with what triggered them (review requested, mentioned, build failed). |
 
-Search merge requests by reference (`team/app!12`), title, author or source branch, and issues by reference, title, assignee or label. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
+Search merge requests by reference (`team/app!12`), title, author or source branch, issues by reference, title, assignee or label, and to-do items by reference, title, action or author. <kbd>⌥</kbd><kbd>↩</kbd> copies the full reference. The key alone opens the list, without the space a project list needs. The keys are case-sensitive, so `glab m` still searches projects. You can change them in the Workflow's Configuration.
 
 ### Commands
 

@@ -56,6 +56,22 @@ test("the key alone opens the list without a trailing space", () => {
 });
 
 test("the lists show above the projects only on an empty query", () => {
-  expect(mineItems("").map((i) => i.autocomplete)).toEqual(["M ", "I ", "R "]);
+  expect(mineItems("").map((i) => i.autocomplete)).toEqual(["M ", "I ", "R ", "T "]);
   expect(mineItems("I")).toEqual([]);
+});
+
+test("todos show the action, and fall back to their text without a target", async () => {
+  const glab = {
+    loggedInHosts: async () => ["h"],
+    api: async () => [
+      { action_name: "review_requested", target: { title: "Bump", references: { short: "!5", full: "team/app!5" } }, target_url: "u1", project: { path_with_namespace: "team/app" }, author: { username: "anna" }, created_at: "2026-02-01T00:00:00Z" },
+      { action_name: "mentioned", target: null, body: "Look at this", target_url: "u2", project: null, author: { username: "ben" }, created_at: "2026-01-01T00:00:00Z" },
+    ],
+  };
+  const [review, gone] = (await fetchMine(glab, findMine("T"))).data;
+  expect(review.title).toBe("!5 Bump");
+  expect(review.subtitle).toBe("review requested · team/app · anna");
+  expect(review.copy).toBe("team/app!5");
+  expect(gone.title).toBe("Look at this");
+  expect(gone.copy).toBe("u2");
 });
