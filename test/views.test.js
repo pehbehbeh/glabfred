@@ -108,3 +108,9 @@ test("wiki pages encode their slug in the URL", () => {
   expect(faq.url).toBe("https://gitlab.example.com/team/app/-/wikis/FAQ-%26-Tipps-f%C3%BCr-Einsteiger");
   expect(faq.copy).toBe("FAQ-&-Tipps-für-Einsteiger");
 });
+
+test("boards show their label columns", () => {
+  const [board] = findView("b").toEntries([{ id: 5, name: "Development", lists: [{ label: { name: "Doing" } }, { label: null }, { label: { name: "Review" } }] }], project);
+  expect(board.subtitle).toBe("Doing · Review");
+  expect(board.url).toBe("https://gitlab.example.com/team/app/-/boards/5");
+});

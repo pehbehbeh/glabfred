@@ -36,7 +36,7 @@ glab <project> <shortcut>      project menu, filtered
 glab <project> m <search>      open merge requests
 ```
 
-In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages):
+In a list (merge requests, issues, files, pipelines, commits, branches, tags, releases, milestones, environments, wiki pages, boards):
 
 - <kbd>↩</kbd> Open the entry in the browser.
 - <kbd>⌥</kbd><kbd>↩</kbd> Copy its reference (`!12`, `#34`, the file path, the short commit SHA, the branch or the tag name, the milestone as `%name`, the environment's URL or the wiki page's path).
@@ -52,7 +52,7 @@ On a list entry in the project menu:
 | Key | Aliases | Opens | Details |
 |---|---|---|---|
 | `m` | `mr` | Merge requests | Lists open MRs in Alfred. Search by number, title, author or source branch. |
-| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. |
+| `i` | `issue` | Issues | Lists open issues in Alfred. Search by number, title, assignee or label. A board column is usually a label, so `i doing` shows that column. |
 | `t` | `file`, `find` | Find file | Lists the files on the default branch in Alfred. Search by path. |
 | `p` | `pipe`, `ci` | Pipelines | Lists the last 50 pipelines in Alfred. Search by branch, status or ID. |
 | `c` | `commit` | Commits | Lists the last 100 commits on the default branch in Alfred. Search by short SHA, title or author. |
@@ -62,7 +62,7 @@ On a list entry in the project menu:
 | `milestone` | | Milestones | Lists active milestones of the project and its parent groups in Alfred, next due date first. Search by title or description. |
 | `e` | `env` | Environments | Lists available environments in Alfred, last updated first. Search by name, tier or URL. ↩ opens the deployed app, ⌘↩ the environment in GitLab. |
 | `w` | | Wiki | Lists all wiki pages in Alfred. Search by title or path. |
-| `b` | | Issue boards | Opens the project's issue boards in the browser. |
+| `b` | `board` | Issue boards | Lists the project's issue boards in Alfred with their label columns. Search by name or column. |
 | `f` | | Repository | Opens the repository files on the default branch in the browser. |
 | `j` | | Jobs | Opens the project's CI/CD jobs in the browser. |
 | `.` | | Web IDE | Opens the default branch in GitLab's Web IDE. |
@@ -81,7 +81,7 @@ Results come from a cache in Alfred's workflow cache folder and refresh in a det
 | Data | Refreshed after |
 |---|---|
 | projects, files | 1 hour |
-| branches, tags, releases, milestones, environments, wiki pages | 10 minutes |
+| branches, tags, releases, milestones, environments, wiki pages, boards | 10 minutes |
 | merge requests, issues, pipelines, commits | 1 minute |
 
 ## Development
