@@ -1,11 +1,8 @@
 import { expect, test } from "bun:test";
-import { existsSync, mkdtempSync, readFileSync, utimesSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { existsSync, readFileSync, utimesSync, writeFileSync } from "node:fs";
+import { cached, cachedKey, refreshKey, remembered, writeRefresh } from "../lib/cache.js";
 
-// cache.js reads the cache dir at import time
-const dir = mkdtempSync(`${tmpdir()}/glabfred-test-`);
-process.env.alfred_workflow_cache = dir;
-const { cached, cachedKey, refreshKey, remembered, writeRefresh } = await import("../lib/cache.js");
+const dir = process.env.alfred_workflow_cache;
 
 const HOUR = 60 * 60 * 1000;
 const put = (name, value) => writeFileSync(`${dir}/${name}.json`, JSON.stringify(value));
