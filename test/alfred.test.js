@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { exactNumberFirst, listItems, numberQuery, search } from "../lib/alfred.js";
+import { errorItems, exactNumberFirst, listItems, numberQuery, search } from "../lib/alfred.js";
 
 test("entries whose title matches come before path-only matches", () => {
   const entries = [
@@ -38,4 +38,9 @@ test("a list shows at most 200 entries", () => {
   const entries = Array.from({ length: 250 }, (_, i) => entry(i));
   expect(listItems({ entries }).items.length).toBe(200);
   expect(listItems({ entries, toItems: (shown) => shown.map((e) => ({ title: e.title })) }).items.length).toBe(200);
+});
+
+test("blank lines in glab's error output show no row", () => {
+  const error = 'ERROR  \n          \n  Get "https://gitlab.example.com/api/v4/projects/1": no such host.';
+  expect(errorItems(error).map((i) => i.subtitle)).toEqual(["ERROR", 'Get "https://gitlab.example.com/api/v4/projects/1": no such host.']);
 });
