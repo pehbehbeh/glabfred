@@ -32,6 +32,10 @@ test("an empty query shows the lists on all hosts above the projects", async () 
   expect(result.rerun).toBeUndefined();
 });
 
+test("a query that matches no project says so", async () => {
+  expect((await run("nothing here")).items).toEqual([{ title: "No projects found", subtitle: "nothing here", valid: false }]);
+});
+
 test("a project without a list word shows its menu with cached counts", async () => {
   put("gitlab.example.com_1_issues", { data: [entry(1, "Open bug"), entry(2, "Other bug")] });
   const [issues] = (await run("team/app i")).items;
