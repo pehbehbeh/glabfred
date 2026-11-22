@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.3.0](https://github.com/pehbehbeh/glabfred/compare/v1.2.0...v1.3.0) (2026-11-21)
+
+
+### Features
+
+* add commands to refresh the cache and list the logged-in hosts ([c071d0c](https://github.com/pehbehbeh/glabfred/commit/c071d0c7a815794af5a8e49f22f3690d667208c5))
+* find looked-up issues and merge requests by text and show while a number loads ([58ea77b](https://github.com/pehbehbeh/glabfred/commit/58ea77b80904f1fdf00648d68d30a697e6534d74))
+* list your merge requests, issues and review requests across all hosts ([a0982fe](https://github.com/pehbehbeh/glabfred/commit/a0982fe442963c2e9733d441a6da6565948dbddf))
+* list your to-do items across all hosts ([ef11adc](https://github.com/pehbehbeh/glabfred/commit/ef11adcac6bfa436e0a50b4aded8d725a7ea115e))
+* pick the source branch for a new merge request ([373b999](https://github.com/pehbehbeh/glabfred/commit/373b9996f3b0334f6ec25a7903b02b0a968500e0))
+* rank starred projects first ([1071ec3](https://github.com/pehbehbeh/glabfred/commit/1071ec389017002206ff2185745747ca610a14b5))
+* say when no project matches the search ([a917384](https://github.com/pehbehbeh/glabfred/commit/a91738494e43a28d095c1401bddbcf574cb0364a))
+* search snippets in a project and your own across all hosts ([16ffece](https://github.com/pehbehbeh/glabfred/commit/16ffece8e56148c987cfe4bb45b28a03323a1215))
+* search the code of a project ([e6663ad](https://github.com/pehbehbeh/glabfred/commit/e6663ad776d6e1913b45ff3ac5850a2e44316a8d))
+* search the project settings and their sections ([83d7a82](https://github.com/pehbehbeh/glabfred/commit/83d7a82328c8b405e34f783ddf5628bfad32274e))
+
+
+### Bug Fixes
+
+* detect missing issues and merge requests by HTTP status and keep parallel refreshes from deleting each other's lock ([d243b29](https://github.com/pehbehbeh/glabfred/commit/d243b29c668bd80c392285312c47c0ef2371a0d5))
+* drop the blank rows from glab's error output ([b633413](https://github.com/pehbehbeh/glabfred/commit/b6334135bcf10b66157db16fb9748819bdc0458c))
+* keep number lookups in one cache file per list instead of one per number ([45d870a](https://github.com/pehbehbeh/glabfred/commit/45d870acdd512db698ce53428ee44d44667c9606))
+
 ## [1.2.0](https://github.com/pehbehbeh/glabfred/compare/v1.1.0...v1.2.0) (2026-11-19)
 
 
